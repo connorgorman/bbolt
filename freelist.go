@@ -177,6 +177,7 @@ func (f *freelist) free(txid txid, p *page) {
 		// Add to the freelist and cache.
 		txp.ids = append(txp.ids, id)
 		txp.alloctx = append(txp.alloctx, allocTxid)
+		fmt.Println("Marking page", id, "as free")
 		f.cache[id] = true
 	}
 }
